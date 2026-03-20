@@ -1,0 +1,3154 @@
+{
+  "parameters" : {
+    "parameters" : { }
+  },
+  "initialNodes" : [ "c8a37114-9513-4cb0-a6e5-1f778324cd7c", "dd92df0a-4bc5-41d6-b6b7-8223a00216f9", "ee41c22e-6b6a-4b70-8b00-668976a8a0d8", "376bea4d-147f-4823-931e-ead0446ab3b2", "b20a8d14-5b75-414b-8f54-5dd64f562e83", "4679f8db-808e-44fa-bdaa-a70dadba183f" ],
+  "nodes" : {
+    "c8a37114-9513-4cb0-a6e5-1f778324cd7c" : {
+      "nodeType" : ".v1.LoadExcel",
+      "name" : "Returns",
+      "id" : "c8a37114-9513-4cb0-a6e5-1f778324cd7c",
+      "baseType" : "input",
+      "nextNodes" : [ {
+        "namespace" : "Default",
+        "nextNodeId" : "40871e78-63d8-4d0c-b470-6a2e530b4c90",
+        "nextNamespace" : "Default"
+      } ],
+      "serialize" : false,
+      "description" : null,
+      "connectionId" : "5432daa5-3268-4f95-8367-4a539e941ab0",
+      "connectionAttributes" : { },
+      "fields" : [ {
+        "name" : "Row ID",
+        "type" : "integer",
+        "collation" : "LROOT",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Order ID",
+        "type" : "string",
+        "collation" : "LEN_RUS_S2",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Order Date",
+        "type" : "date",
+        "collation" : "LROOT",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Product ID",
+        "type" : "string",
+        "collation" : "LEN_RUS_S2",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Sub-Category",
+        "type" : "string",
+        "collation" : "LEN_RUS_S2",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Product Name",
+        "type" : "string",
+        "collation" : "LEN_RUS_S2",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Return reason",
+        "type" : "string",
+        "collation" : "LEN_RUS_S2",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Notes",
+        "type" : "string",
+        "collation" : "LEN_RUS_S2",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      } ],
+      "actions" : [ {
+        "nodeType" : ".v1.RemoveColumns",
+        "name" : "Remove Row ID + 0 More 1",
+        "id" : "5e725c36-4ac1-4c88-a0aa-08f59c95d809",
+        "baseType" : "transform",
+        "nextNodes" : [ ],
+        "serialize" : false,
+        "description" : null,
+        "columnNames" : [ "Row ID" ]
+      }, {
+        "nodeType" : ".v1.RemoveColumns",
+        "name" : "Remove Order Date + 0 More 1",
+        "id" : "c2d064bc-7961-4e05-81bc-f06b1e362f36",
+        "baseType" : "transform",
+        "nextNodes" : [ ],
+        "serialize" : false,
+        "description" : null,
+        "columnNames" : [ "Order Date" ]
+      }, {
+        "nodeType" : ".v1.RemoveColumns",
+        "name" : "Remove Sub-Category + 0 More 1",
+        "id" : "20f23b33-655b-44c6-bc43-46f2ccd9a222",
+        "baseType" : "transform",
+        "nextNodes" : [ ],
+        "serialize" : false,
+        "description" : null,
+        "columnNames" : [ "Sub-Category" ]
+      }, {
+        "nodeType" : ".v1.RemoveColumns",
+        "name" : "Remove Product Name + 0 More 1",
+        "id" : "436c4543-ff74-4380-a7bf-e24117e71f04",
+        "baseType" : "transform",
+        "nextNodes" : [ ],
+        "serialize" : false,
+        "description" : null,
+        "columnNames" : [ "Product Name" ]
+      } ],
+      "debugModeRowLimit" : null,
+      "originalDataTypes" : { },
+      "randomSampling" : null,
+      "updateTimestamp" : null,
+      "restrictedFields" : { },
+      "userRenamedFields" : { },
+      "selectedFields" : null,
+      "samplingType" : null,
+      "groupByFields" : null,
+      "filters" : [ ],
+      "relation" : {
+        "type" : "table",
+        "table" : "[Returns$]"
+      }
+    },
+    "9b284447-a29c-4dde-899e-3521d9eca09b" : {
+      "nodeType" : ".v1.Container",
+      "name" : "Remove nulls",
+      "id" : "9b284447-a29c-4dde-899e-3521d9eca09b",
+      "baseType" : "container",
+      "nextNodes" : [ {
+        "namespace" : "Default",
+        "nextNodeId" : "32c95fc1-70c3-49b0-a47c-b85ac0a1e983",
+        "nextNamespace" : "Union-Namespace-81520d84-a1fb-458b-a14b-ab13240f78b5"
+      } ],
+      "serialize" : false,
+      "description" : null,
+      "loomContainer" : {
+        "parameters" : {
+          "parameters" : { }
+        },
+        "initialNodes" : [ "06e71a25-be6b-481a-ad27-bd3f3be09a2f" ],
+        "nodes" : {
+          "06e71a25-be6b-481a-ad27-bd3f3be09a2f" : {
+            "nodeType" : ".v1.RangeFilter",
+            "name" : "Exclude Order ID:null 1",
+            "id" : "06e71a25-be6b-481a-ad27-bd3f3be09a2f",
+            "baseType" : "transform",
+            "nextNodes" : [ {
+              "namespace" : "Default",
+              "nextNodeId" : "0f08a3c5-80c5-4ddf-94af-09ed8d17c01c",
+              "nextNamespace" : "Default"
+            } ],
+            "serialize" : false,
+            "description" : null,
+            "ranges" : {
+              "Order ID" : [ {
+                "startValue" : null,
+                "includeStart" : true,
+                "endValue" : null,
+                "includeEnd" : true
+              } ]
+            },
+            "exclude" : true
+          },
+          "0f08a3c5-80c5-4ddf-94af-09ed8d17c01c" : {
+            "nodeType" : ".v1.AddColumn",
+            "columnName" : "Sales Region",
+            "expression" : "\"USCA\"",
+            "name" : "Add Sales Region",
+            "id" : "0f08a3c5-80c5-4ddf-94af-09ed8d17c01c",
+            "baseType" : "transform",
+            "nextNodes" : [ ],
+            "serialize" : false,
+            "description" : null
+          }
+        },
+        "connections" : { },
+        "dataConnections" : { },
+        "connectionIds" : [ ],
+        "dataConnectionIds" : [ ],
+        "nodeProperties" : { },
+        "extensibility" : null
+      },
+      "namespacesToInput" : {
+        "Default" : {
+          "nodeId" : "06e71a25-be6b-481a-ad27-bd3f3be09a2f",
+          "namespace" : "Default"
+        }
+      },
+      "namespacesToOutput" : {
+        "Default" : {
+          "nodeId" : "0f08a3c5-80c5-4ddf-94af-09ed8d17c01c",
+          "namespace" : "Default"
+        }
+      },
+      "providedParameters" : null
+    },
+    "32c95fc1-70c3-49b0-a47c-b85ac0a1e983" : {
+      "nodeType" : ".v2018_2_3.SuperUnion",
+      "name" : "All orders",
+      "id" : "32c95fc1-70c3-49b0-a47c-b85ac0a1e983",
+      "baseType" : "superNode",
+      "nextNodes" : [ {
+        "namespace" : "Default",
+        "nextNodeId" : "b2c6e3f3-941c-4d48-a672-c7701233c433",
+        "nextNamespace" : "Right"
+      } ],
+      "serialize" : false,
+      "description" : null,
+      "beforeActionAnnotations" : [ ],
+      "afterActionAnnotations" : [ ],
+      "actionNode" : {
+        "nodeType" : ".v1.SimpleUnion",
+        "name" : "Union 1",
+        "id" : "f2ceada6-b20f-44ea-a79b-826f381881d1",
+        "baseType" : "transform",
+        "nextNodes" : [ ],
+        "serialize" : false,
+        "description" : null,
+        "namespaceFieldMappings" : [ {
+          "namespaceName" : "Union-Namespace-f3d2e088-4a0c-4252-90c5-e589dd5109ae",
+          "fieldMappings" : { }
+        }, {
+          "namespaceName" : "Union-Namespace-81520d84-a1fb-458b-a14b-ab13240f78b5",
+          "fieldMappings" : {
+            "[Country]" : "Country/Region"
+          }
+        }, {
+          "namespaceName" : "Union-Namespace-69836634-902d-47e8-9dbc-d25627ea08c2",
+          "fieldMappings" : { }
+        }, {
+          "namespaceName" : "Union-Namespace-f2bc42b9-9043-4826-be75-045598a9c751",
+          "fieldMappings" : { }
+        } ]
+      }
+    },
+    "40871e78-63d8-4d0c-b470-6a2e530b4c90" : {
+      "nodeType" : ".v1.Container",
+      "name" : "Clean notes/approver",
+      "id" : "40871e78-63d8-4d0c-b470-6a2e530b4c90",
+      "baseType" : "container",
+      "nextNodes" : [ {
+        "namespace" : "Default",
+        "nextNodeId" : "b2c6e3f3-941c-4d48-a672-c7701233c433",
+        "nextNamespace" : "Left"
+      } ],
+      "serialize" : false,
+      "description" : null,
+      "loomContainer" : {
+        "parameters" : {
+          "parameters" : { }
+        },
+        "initialNodes" : [ "9d42db4c-3c98-4257-98bb-2a0e080234b2" ],
+        "nodes" : {
+          "acf4d88c-4a7b-4e7c-b293-ef1809d58dff" : {
+            "nodeType" : ".v1.RenameColumn",
+            "columnName" : "Notes - Split 1",
+            "rename" : "Return notes",
+            "name" : "Renamed Notes - Split 1 to Return Notes 1",
+            "id" : "acf4d88c-4a7b-4e7c-b293-ef1809d58dff",
+            "baseType" : "transform",
+            "nextNodes" : [ {
+              "namespace" : "Default",
+              "nextNodeId" : "baa78b8e-ec7a-41f6-8ddc-dcb4aa774459",
+              "nextNamespace" : "Default"
+            } ],
+            "serialize" : false,
+            "description" : null
+          },
+          "baa78b8e-ec7a-41f6-8ddc-dcb4aa774459" : {
+            "nodeType" : ".v1.RenameColumn",
+            "columnName" : "Notes - Split 2",
+            "rename" : "Approver",
+            "name" : "Renamed Notes - Split 2 to Approver 1",
+            "id" : "baa78b8e-ec7a-41f6-8ddc-dcb4aa774459",
+            "baseType" : "transform",
+            "nextNodes" : [ {
+              "namespace" : "Default",
+              "nextNodeId" : "b7b7ff86-b0ef-4bb5-96c6-77bbae0783bc",
+              "nextNamespace" : "Default"
+            } ],
+            "serialize" : false,
+            "description" : null
+          },
+          "b7b7ff86-b0ef-4bb5-96c6-77bbae0783bc" : {
+            "nodeType" : ".v1.RemoveColumns",
+            "name" : "Remove Notes 1",
+            "id" : "b7b7ff86-b0ef-4bb5-96c6-77bbae0783bc",
+            "baseType" : "transform",
+            "nextNodes" : [ {
+              "namespace" : "Default",
+              "nextNodeId" : "ef9ea8ad-c200-45f8-9303-a3621cec50cc",
+              "nextNamespace" : "Default"
+            } ],
+            "serialize" : false,
+            "description" : null,
+            "columnNames" : [ "Notes" ]
+          },
+          "3277f8fb-2035-4290-bdfa-baa5b5752c46" : {
+            "nodeType" : ".v1.AddColumn",
+            "columnName" : "Notes - Split 2",
+            "expression" : "TRIM( SPLIT( [Notes], \"-\", 2 ) )",
+            "name" : "Add Notes - Split 2 1",
+            "id" : "3277f8fb-2035-4290-bdfa-baa5b5752c46",
+            "baseType" : "transform",
+            "nextNodes" : [ {
+              "namespace" : "Default",
+              "nextNodeId" : "acf4d88c-4a7b-4e7c-b293-ef1809d58dff",
+              "nextNamespace" : "Default"
+            } ],
+            "serialize" : false,
+            "description" : null
+          },
+          "9d42db4c-3c98-4257-98bb-2a0e080234b2" : {
+            "nodeType" : ".v1.AddColumn",
+            "columnName" : "Notes - Split 1",
+            "expression" : "TRIM( SPLIT( [Notes], \"-\", 1 ) )",
+            "name" : "Add Notes - Split 1 1",
+            "id" : "9d42db4c-3c98-4257-98bb-2a0e080234b2",
+            "baseType" : "transform",
+            "nextNodes" : [ {
+              "namespace" : "Default",
+              "nextNodeId" : "3277f8fb-2035-4290-bdfa-baa5b5752c46",
+              "nextNamespace" : "Default"
+            } ],
+            "serialize" : false,
+            "description" : null
+          },
+          "ef9ea8ad-c200-45f8-9303-a3621cec50cc" : {
+            "nodeType" : ".v2018_3_3.Remap",
+            "name" : "Clean 1",
+            "id" : "ef9ea8ad-c200-45f8-9303-a3621cec50cc",
+            "baseType" : "transform",
+            "nextNodes" : [ ],
+            "serialize" : false,
+            "description" : null,
+            "columnName" : "Approver",
+            "values" : {
+              "\"S. Kelly\"" : [ "\"S. Kelly\"", "\"S Kelly\"", "\"S/Kelly\"" ],
+              "\"M.  Gomez\"" : [ "\"M/ Gomez\"", "\"M Gomez\"", "\"M.  Gomez\"" ],
+              "\"F Azad\"" : [ "\"F Azad\"", "\"F/Azad\"", "\"F. Azad\"" ],
+              "\"E Williams\"" : [ "\"E Williams\"", "\"E   Williams\"" ],
+              "\"G Lindsay\"" : [ "\"G/Lindsay\"", "\"G Lindsay\"" ],
+              "\"C Arnold\"" : [ "\"C/Arnold\"", "\"C Arnold\"" ],
+              "\"R Chen\"" : [ "\"R. Chen\"", "\"R Chen\"" ],
+              "\"K Lawrence\"" : [ "\"K/Lawrence\"", "\"K Lawrence\"" ],
+              "\"R Duchesne\"" : [ "\"RDuchesne\"", "\"R Duchesne\"" ],
+              "\"L Jenkins\"" : [ "\"L/Jenkins\"", "\"L Jenkins\"", "\"L. Jenkins\"" ]
+            },
+            "groupMethodProps" : {
+              "groupMethod" : "NGramFingerprint",
+              "threshold" : 3.0
+            },
+            "fieldId" : ""
+          }
+        },
+        "connections" : { },
+        "dataConnections" : { },
+        "connectionIds" : [ ],
+        "dataConnectionIds" : [ ],
+        "nodeProperties" : { },
+        "extensibility" : null
+      },
+      "namespacesToInput" : {
+        "Default" : {
+          "nodeId" : "9d42db4c-3c98-4257-98bb-2a0e080234b2",
+          "namespace" : "Default"
+        }
+      },
+      "namespacesToOutput" : {
+        "Default" : {
+          "nodeId" : "ef9ea8ad-c200-45f8-9303-a3621cec50cc",
+          "namespace" : "Default"
+        }
+      },
+      "providedParameters" : null
+    },
+    "b6893bb7-3b45-40e9-a6ff-c2a212f4b1e2" : {
+      "nodeType" : ".v1.Container",
+      "name" : "Fix data type",
+      "id" : "b6893bb7-3b45-40e9-a6ff-c2a212f4b1e2",
+      "baseType" : "container",
+      "nextNodes" : [ {
+        "namespace" : "Default",
+        "nextNodeId" : "32c95fc1-70c3-49b0-a47c-b85ac0a1e983",
+        "nextNamespace" : "Union-Namespace-69836634-902d-47e8-9dbc-d25627ea08c2"
+      } ],
+      "serialize" : false,
+      "description" : null,
+      "loomContainer" : {
+        "parameters" : {
+          "parameters" : { }
+        },
+        "initialNodes" : [ "3f888eb2-5543-4b5a-9608-3e657fb7b19c" ],
+        "nodes" : {
+          "3f888eb2-5543-4b5a-9608-3e657fb7b19c" : {
+            "nodeType" : ".v2018_3_3.QuickCalcColumn",
+            "columnName" : "Sales",
+            "expression" : "REGEXP_REPLACE([Sales], '[:Letter:]', '')",
+            "calcExpressionType" : "RemoveLetters",
+            "name" : "Quick Calc 1",
+            "id" : "3f888eb2-5543-4b5a-9608-3e657fb7b19c",
+            "baseType" : "transform",
+            "nextNodes" : [ {
+              "namespace" : "Default",
+              "nextNodeId" : "747bf362-43c8-4de1-bc01-60dfdb0e24b4",
+              "nextNamespace" : "Default"
+            } ],
+            "serialize" : false,
+            "description" : null
+          },
+          "edafe903-c5d0-43d1-b740-62579eb156eb" : {
+            "nodeType" : ".v1.ChangeColumnType",
+            "fields" : {
+              "Discount" : {
+                "type" : "string",
+                "calc" : null
+              }
+            },
+            "name" : "Change Discount to String 1",
+            "id" : "edafe903-c5d0-43d1-b740-62579eb156eb",
+            "baseType" : "transform",
+            "nextNodes" : [ {
+              "namespace" : "Default",
+              "nextNodeId" : "b472fb8f-f5d8-4ae8-9c91-3cc69e77c701",
+              "nextNamespace" : "Default"
+            } ],
+            "serialize" : false,
+            "description" : null
+          },
+          "747bf362-43c8-4de1-bc01-60dfdb0e24b4" : {
+            "nodeType" : ".v1.ChangeColumnType",
+            "fields" : {
+              "Sales" : {
+                "type" : "real",
+                "calc" : null
+              }
+            },
+            "name" : "Change Right_Discount to Number (decimal) 1",
+            "id" : "747bf362-43c8-4de1-bc01-60dfdb0e24b4",
+            "baseType" : "transform",
+            "nextNodes" : [ {
+              "namespace" : "Default",
+              "nextNodeId" : "edafe903-c5d0-43d1-b740-62579eb156eb",
+              "nextNamespace" : "Default"
+            } ],
+            "serialize" : false,
+            "description" : null
+          },
+          "b472fb8f-f5d8-4ae8-9c91-3cc69e77c701" : {
+            "nodeType" : ".v1.AddColumn",
+            "columnName" : "Sales Region",
+            "expression" : "\"APAC\"",
+            "name" : "Add Sales Region",
+            "id" : "b472fb8f-f5d8-4ae8-9c91-3cc69e77c701",
+            "baseType" : "transform",
+            "nextNodes" : [ ],
+            "serialize" : false,
+            "description" : null
+          }
+        },
+        "connections" : { },
+        "dataConnections" : { },
+        "connectionIds" : [ ],
+        "dataConnectionIds" : [ ],
+        "nodeProperties" : { },
+        "extensibility" : null
+      },
+      "namespacesToInput" : {
+        "Default" : {
+          "nodeId" : "3f888eb2-5543-4b5a-9608-3e657fb7b19c",
+          "namespace" : "Default"
+        }
+      },
+      "namespacesToOutput" : {
+        "Default" : {
+          "nodeId" : "b472fb8f-f5d8-4ae8-9c91-3cc69e77c701",
+          "namespace" : "Default"
+        }
+      },
+      "providedParameters" : null
+    },
+    "dbe494af-f83f-40f4-9d90-0bcb3f934652" : {
+      "nodeType" : ".v1.Container",
+      "name" : "Fix dates",
+      "id" : "dbe494af-f83f-40f4-9d90-0bcb3f934652",
+      "baseType" : "container",
+      "nextNodes" : [ {
+        "namespace" : "Default",
+        "nextNodeId" : "32c95fc1-70c3-49b0-a47c-b85ac0a1e983",
+        "nextNamespace" : "Union-Namespace-f3d2e088-4a0c-4252-90c5-e589dd5109ae"
+      } ],
+      "serialize" : false,
+      "description" : null,
+      "loomContainer" : {
+        "parameters" : {
+          "parameters" : { }
+        },
+        "initialNodes" : [ "5fc1b9de-ea47-4cc7-b2f4-bd52f0e3c464" ],
+        "nodes" : {
+          "18ca40c0-6452-4751-9b1c-451eb97654de" : {
+            "nodeType" : ".v1.RemoveColumns",
+            "name" : "Remove Dispatch Month 1",
+            "id" : "18ca40c0-6452-4751-9b1c-451eb97654de",
+            "baseType" : "transform",
+            "nextNodes" : [ {
+              "namespace" : "Default",
+              "nextNodeId" : "7b428fb6-c14a-4d26-99b1-38229bbfd44d",
+              "nextNamespace" : "Default"
+            } ],
+            "serialize" : false,
+            "description" : null,
+            "columnNames" : [ "Dispatch Month" ]
+          },
+          "7b428fb6-c14a-4d26-99b1-38229bbfd44d" : {
+            "nodeType" : ".v1.RemoveColumns",
+            "name" : "Remove Dispatch Day 1",
+            "id" : "7b428fb6-c14a-4d26-99b1-38229bbfd44d",
+            "baseType" : "transform",
+            "nextNodes" : [ {
+              "namespace" : "Default",
+              "nextNodeId" : "a8256371-47c1-4518-bda3-318ea1a1a0f5",
+              "nextNamespace" : "Default"
+            } ],
+            "serialize" : false,
+            "description" : null,
+            "columnNames" : [ "Dispatch Day" ]
+          },
+          "cb1b8a24-9100-4629-ad6d-d78c15f63f86" : {
+            "nodeType" : ".v1.RemoveColumns",
+            "name" : "Remove Order Day 1",
+            "id" : "cb1b8a24-9100-4629-ad6d-d78c15f63f86",
+            "baseType" : "transform",
+            "nextNodes" : [ {
+              "namespace" : "Default",
+              "nextNodeId" : "33ccb9ae-6b10-444c-8f96-4760017a735d",
+              "nextNamespace" : "Default"
+            } ],
+            "serialize" : false,
+            "description" : null,
+            "columnNames" : [ "Order Day" ]
+          },
+          "a8256371-47c1-4518-bda3-318ea1a1a0f5" : {
+            "nodeType" : ".v1.AddColumn",
+            "columnName" : "Discount",
+            "expression" : "IFNULL([Discount],0)\n",
+            "name" : "Add Discount",
+            "id" : "a8256371-47c1-4518-bda3-318ea1a1a0f5",
+            "baseType" : "transform",
+            "nextNodes" : [ {
+              "namespace" : "Default",
+              "nextNodeId" : "ee100c5d-6e71-4971-b199-1a2f5b9b2d61",
+              "nextNamespace" : "Default"
+            } ],
+            "serialize" : false,
+            "description" : null
+          },
+          "8633658d-3195-48be-8fda-ba015e8b1a0b" : {
+            "nodeType" : ".v1.RenameColumn",
+            "columnName" : "Product",
+            "rename" : "Product Name",
+            "name" : "Renamed Product to Product Name 1",
+            "id" : "8633658d-3195-48be-8fda-ba015e8b1a0b",
+            "baseType" : "transform",
+            "nextNodes" : [ ],
+            "serialize" : false,
+            "description" : null
+          },
+          "2d93ab56-e8d3-460f-b50e-99aec5094cf6" : {
+            "nodeType" : ".v1.AddColumn",
+            "columnName" : "Order Date",
+            "expression" : "(STR([Order Day])+\"/\"+STR([Order Month])+\"/\"+STR([Order Year]))\n",
+            "name" : "Add Order Date",
+            "id" : "2d93ab56-e8d3-460f-b50e-99aec5094cf6",
+            "baseType" : "transform",
+            "nextNodes" : [ {
+              "namespace" : "Default",
+              "nextNodeId" : "ee73ca99-00f4-4453-b28b-522772ba790f",
+              "nextNamespace" : "Default"
+            } ],
+            "serialize" : false,
+            "description" : null
+          },
+          "5fc1b9de-ea47-4cc7-b2f4-bd52f0e3c464" : {
+            "nodeType" : ".v1.AddColumn",
+            "columnName" : "Sales Region",
+            "expression" : "\"LATAM\"",
+            "name" : "Add Sales Region",
+            "id" : "5fc1b9de-ea47-4cc7-b2f4-bd52f0e3c464",
+            "baseType" : "transform",
+            "nextNodes" : [ {
+              "namespace" : "Default",
+              "nextNodeId" : "2d93ab56-e8d3-460f-b50e-99aec5094cf6",
+              "nextNamespace" : "Default"
+            } ],
+            "serialize" : false,
+            "description" : null
+          },
+          "8eb0833a-0b1c-4b4c-a69f-fb1129425d0d" : {
+            "nodeType" : ".v1.RenameColumn",
+            "columnName" : "Country\\Region",
+            "rename" : "Country/Region",
+            "name" : "Renamed Country\\Region to Country/Region 1",
+            "id" : "8eb0833a-0b1c-4b4c-a69f-fb1129425d0d",
+            "baseType" : "transform",
+            "nextNodes" : [ {
+              "namespace" : "Default",
+              "nextNodeId" : "62624ff1-5d93-4f60-bab7-2082a672ca34",
+              "nextNamespace" : "Default"
+            } ],
+            "serialize" : false,
+            "description" : null
+          },
+          "52f1bca9-7949-4ce7-bb1c-481d13865bf7" : {
+            "nodeType" : ".v1.ChangeColumnType",
+            "fields" : {
+              "Order Date" : {
+                "type" : "date",
+                "calc" : "IF NOT ISNULL(DATE(DATEPARSE(\"dd/MM/yyyy\",[Order Date]))) THEN DATE(DATEPARSE(\"dd/MM/yyyy\",[Order Date])) ELSEIF NOT ISNULL(DATE([Order Date])) THEN DATE([Order Date]) ELSE NULL END"
+              }
+            },
+            "name" : "Change Order Date to Date 1",
+            "id" : "52f1bca9-7949-4ce7-bb1c-481d13865bf7",
+            "baseType" : "transform",
+            "nextNodes" : [ {
+              "namespace" : "Default",
+              "nextNodeId" : "8eb0833a-0b1c-4b4c-a69f-fb1129425d0d",
+              "nextNamespace" : "Default"
+            } ],
+            "serialize" : false,
+            "description" : null
+          },
+          "ee100c5d-6e71-4971-b199-1a2f5b9b2d61" : {
+            "nodeType" : ".v1.RangeFilter",
+            "name" : "Exclude Order ID:null 1",
+            "id" : "ee100c5d-6e71-4971-b199-1a2f5b9b2d61",
+            "baseType" : "transform",
+            "nextNodes" : [ {
+              "namespace" : "Default",
+              "nextNodeId" : "8633658d-3195-48be-8fda-ba015e8b1a0b",
+              "nextNamespace" : "Default"
+            } ],
+            "serialize" : false,
+            "description" : null,
+            "ranges" : {
+              "Order ID" : [ {
+                "startValue" : null,
+                "includeStart" : true,
+                "endValue" : null,
+                "includeEnd" : true
+              } ]
+            },
+            "exclude" : true
+          },
+          "ee73ca99-00f4-4453-b28b-522772ba790f" : {
+            "nodeType" : ".v1.AddColumn",
+            "columnName" : "Dispatch Date",
+            "expression" : "STR([Dispatch Day])+\"/\"+STR([Dispatch Month])+\"/\"+STR([Dispatch Year])",
+            "name" : "Add Dispatch Date",
+            "id" : "ee73ca99-00f4-4453-b28b-522772ba790f",
+            "baseType" : "transform",
+            "nextNodes" : [ {
+              "namespace" : "Default",
+              "nextNodeId" : "5d984fb3-3718-4c6b-baf1-f39b6f30ac06",
+              "nextNamespace" : "Default"
+            } ],
+            "serialize" : false,
+            "description" : null
+          },
+          "5d984fb3-3718-4c6b-baf1-f39b6f30ac06" : {
+            "nodeType" : ".v1.ChangeColumnType",
+            "fields" : {
+              "Dispatch Date" : {
+                "type" : "date",
+                "calc" : "IF NOT ISNULL(DATE(DATEPARSE(\"dd/MM/yyyy\",[Dispatch Date]))) THEN DATE(DATEPARSE(\"dd/MM/yyyy\",[Dispatch Date])) ELSEIF NOT ISNULL(DATE([Dispatch Date])) THEN DATE([Dispatch Date]) ELSE NULL END"
+              }
+            },
+            "name" : "Change Dispatch Date to Date 1",
+            "id" : "5d984fb3-3718-4c6b-baf1-f39b6f30ac06",
+            "baseType" : "transform",
+            "nextNodes" : [ {
+              "namespace" : "Default",
+              "nextNodeId" : "52f1bca9-7949-4ce7-bb1c-481d13865bf7",
+              "nextNamespace" : "Default"
+            } ],
+            "serialize" : false,
+            "description" : null
+          },
+          "33ccb9ae-6b10-444c-8f96-4760017a735d" : {
+            "nodeType" : ".v1.RemoveColumns",
+            "name" : "Remove Dispatch Year 1",
+            "id" : "33ccb9ae-6b10-444c-8f96-4760017a735d",
+            "baseType" : "transform",
+            "nextNodes" : [ {
+              "namespace" : "Default",
+              "nextNodeId" : "18ca40c0-6452-4751-9b1c-451eb97654de",
+              "nextNamespace" : "Default"
+            } ],
+            "serialize" : false,
+            "description" : null,
+            "columnNames" : [ "Dispatch Year" ]
+          },
+          "62624ff1-5d93-4f60-bab7-2082a672ca34" : {
+            "nodeType" : ".v1.RemoveColumns",
+            "name" : "Remove Order Year 1",
+            "id" : "62624ff1-5d93-4f60-bab7-2082a672ca34",
+            "baseType" : "transform",
+            "nextNodes" : [ {
+              "namespace" : "Default",
+              "nextNodeId" : "7fe0c36d-d2d0-4304-bdac-cec16fc5c11b",
+              "nextNamespace" : "Default"
+            } ],
+            "serialize" : false,
+            "description" : null,
+            "columnNames" : [ "Order Year" ]
+          },
+          "7fe0c36d-d2d0-4304-bdac-cec16fc5c11b" : {
+            "nodeType" : ".v1.RemoveColumns",
+            "name" : "Remove Order Day 1",
+            "id" : "7fe0c36d-d2d0-4304-bdac-cec16fc5c11b",
+            "baseType" : "transform",
+            "nextNodes" : [ {
+              "namespace" : "Default",
+              "nextNodeId" : "cb1b8a24-9100-4629-ad6d-d78c15f63f86",
+              "nextNamespace" : "Default"
+            } ],
+            "serialize" : false,
+            "description" : null,
+            "columnNames" : [ "Order Month" ]
+          }
+        },
+        "connections" : { },
+        "dataConnections" : { },
+        "connectionIds" : [ ],
+        "dataConnectionIds" : [ ],
+        "nodeProperties" : { },
+        "extensibility" : null
+      },
+      "namespacesToInput" : {
+        "Default" : {
+          "nodeId" : "5fc1b9de-ea47-4cc7-b2f4-bd52f0e3c464",
+          "namespace" : "Default"
+        }
+      },
+      "namespacesToOutput" : {
+        "Default" : {
+          "nodeId" : "8633658d-3195-48be-8fda-ba015e8b1a0b",
+          "namespace" : "Default"
+        }
+      },
+      "providedParameters" : null
+    },
+    "64fd712e-7d58-4de7-9726-ae16a47e3782" : {
+      "nodeType" : ".v2018_2_3.SuperUnpivot",
+      "name" : "Pivot quotas",
+      "id" : "64fd712e-7d58-4de7-9726-ae16a47e3782",
+      "baseType" : "superNode",
+      "nextNodes" : [ {
+        "namespace" : "Default",
+        "nextNodeId" : "95ba757e-cc41-48c3-8727-6e40cb8047c9",
+        "nextNamespace" : "Left"
+      } ],
+      "serialize" : false,
+      "description" : null,
+      "beforeActionAnnotations" : [ ],
+      "afterActionAnnotations" : [ {
+        "namespace" : "Default",
+        "annotationNode" : {
+          "nodeType" : ".v1.ChangeColumnType",
+          "fields" : {
+            "Year" : {
+              "type" : "integer",
+              "calc" : null
+            }
+          },
+          "name" : "Change Year to Number (whole) 1",
+          "id" : "5fd150a1-f5a5-4867-acd6-24565d3f663f",
+          "baseType" : "transform",
+          "nextNodes" : [ ],
+          "serialize" : false,
+          "description" : null
+        }
+      } ],
+      "actionNode" : {
+        "nodeType" : ".v1.Unpivot",
+        "name" : "Pivot 1",
+        "id" : "81c162d3-abbf-4ccf-89d2-18a0e3bc33a9",
+        "baseType" : "transform",
+        "nextNodes" : [ ],
+        "serialize" : false,
+        "description" : null,
+        "usesSmartDefaults" : false,
+        "unpivotGroups" : [ {
+          "expressions" : [ {
+            "bindings" : [ {
+              "bindingType" : "literal",
+              "newColumnName" : "Year",
+              "groupName" : "2015"
+            }, {
+              "bindingType" : "column",
+              "newColumnName" : "Quota",
+              "columnName" : "2015"
+            } ]
+          }, {
+            "bindings" : [ {
+              "bindingType" : "literal",
+              "newColumnName" : "Year",
+              "groupName" : "2016"
+            }, {
+              "bindingType" : "column",
+              "newColumnName" : "Quota",
+              "columnName" : "2016"
+            } ]
+          }, {
+            "bindings" : [ {
+              "bindingType" : "literal",
+              "newColumnName" : "Year",
+              "groupName" : "2017"
+            }, {
+              "bindingType" : "column",
+              "newColumnName" : "Quota",
+              "columnName" : "2017"
+            } ]
+          }, {
+            "bindings" : [ {
+              "bindingType" : "literal",
+              "newColumnName" : "Year",
+              "groupName" : "2018"
+            }, {
+              "bindingType" : "column",
+              "newColumnName" : "Quota",
+              "columnName" : "2018"
+            } ]
+          } ]
+        } ]
+      }
+    },
+    "3b6005ae-2dee-4928-87d3-0993b448bd2e" : {
+      "nodeType" : ".v1.Container",
+      "name" : "Rename States/Provinces",
+      "id" : "3b6005ae-2dee-4928-87d3-0993b448bd2e",
+      "baseType" : "container",
+      "nextNodes" : [ {
+        "namespace" : "Default",
+        "nextNodeId" : "32c95fc1-70c3-49b0-a47c-b85ac0a1e983",
+        "nextNamespace" : "Union-Namespace-f2bc42b9-9043-4826-be75-045598a9c751"
+      } ],
+      "serialize" : false,
+      "description" : null,
+      "loomContainer" : {
+        "parameters" : {
+          "parameters" : { }
+        },
+        "initialNodes" : [ "36c05694-2fb6-42af-919c-896744632f03" ],
+        "nodes" : {
+          "36c05694-2fb6-42af-919c-896744632f03" : {
+            "nodeType" : ".v2018_3_3.Remap",
+            "name" : "Clean 1",
+            "id" : "36c05694-2fb6-42af-919c-896744632f03",
+            "baseType" : "transform",
+            "nextNodes" : [ {
+              "namespace" : "Default",
+              "nextNodeId" : "2de85087-349d-40ab-b5ad-b638407261af",
+              "nextNamespace" : "Default"
+            } ],
+            "serialize" : false,
+            "description" : null,
+            "columnName" : "State/Province",
+            "values" : {
+              "\"Aquitaine-Limousin-Poitou-Charentes\"" : [ "\"Aquitaine-Limousin-Poitou-Charentes\"", "\"Aquitaine Limousin Poitou Charentes\"" ],
+              "\"Hauts-de-France\"" : [ "\"Hauts-de-France\"", "\"Hauts de France\"" ],
+              "\"Ile-de-France\"" : [ "\"Ile-de-France\"", "\"Ile de France\"" ],
+              "\"North Rhine-Westphalia\"" : [ "\"North Rhine-Westphalia\"", "\"N. Rhine Westphalia\"" ],
+              "\"Provence-Alpes-Côte d'Azur\"" : [ "\"Provence-Alpes-Côte d'Azur\"", "\"Provence-Alpes-Cote d'Azur\"" ],
+              "\"Schleswig-Holstein\"" : [ "\"Schleswig-Holstein\"", "\"Schleswig Holstein\"" ],
+              "\"South Denmark\"" : [ "\"South Denmark\"", "\"S. Denmark\"" ],
+              "\"South Holland\"" : [ "\"South Holland\"", "\"S. Holland\"" ],
+              "\"Zealand\"" : [ "\"Zealand\"", "\"Zeeland\"" ]
+            },
+            "groupMethodProps" : null,
+            "fieldId" : ""
+          },
+          "2de85087-349d-40ab-b5ad-b638407261af" : {
+            "nodeType" : ".v1.AddColumn",
+            "columnName" : "Sales Region",
+            "expression" : "\"EMEA\"",
+            "name" : "Add Sales Region",
+            "id" : "2de85087-349d-40ab-b5ad-b638407261af",
+            "baseType" : "transform",
+            "nextNodes" : [ ],
+            "serialize" : false,
+            "description" : null
+          }
+        },
+        "connections" : { },
+        "dataConnections" : { },
+        "connectionIds" : [ ],
+        "dataConnectionIds" : [ ],
+        "nodeProperties" : { },
+        "extensibility" : null
+      },
+      "namespacesToInput" : {
+        "Default" : {
+          "nodeId" : "36c05694-2fb6-42af-919c-896744632f03",
+          "namespace" : "Default"
+        }
+      },
+      "namespacesToOutput" : {
+        "Default" : {
+          "nodeId" : "2de85087-349d-40ab-b5ad-b638407261af",
+          "namespace" : "Default"
+        }
+      },
+      "providedParameters" : null
+    },
+    "dd92df0a-4bc5-41d6-b6b7-8223a00216f9" : {
+      "nodeType" : ".v1.LoadExcel",
+      "name" : "Quota",
+      "id" : "dd92df0a-4bc5-41d6-b6b7-8223a00216f9",
+      "baseType" : "input",
+      "nextNodes" : [ {
+        "namespace" : "Default",
+        "nextNodeId" : "64fd712e-7d58-4de7-9726-ae16a47e3782",
+        "nextNamespace" : "Default"
+      } ],
+      "serialize" : false,
+      "description" : null,
+      "connectionId" : "0cead8cf-68f1-42b7-8af7-3a3ed59b8aed",
+      "connectionAttributes" : { },
+      "fields" : [ {
+        "name" : "Sales Region",
+        "type" : "string",
+        "collation" : "LEN_RUS_S2",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "2015",
+        "type" : "integer",
+        "collation" : "LROOT",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "2016",
+        "type" : "integer",
+        "collation" : "LROOT",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "2017",
+        "type" : "integer",
+        "collation" : "LROOT",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "2018",
+        "type" : "integer",
+        "collation" : "LROOT",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      } ],
+      "actions" : [ ],
+      "debugModeRowLimit" : null,
+      "originalDataTypes" : { },
+      "randomSampling" : null,
+      "updateTimestamp" : null,
+      "restrictedFields" : { },
+      "userRenamedFields" : { },
+      "selectedFields" : null,
+      "samplingType" : null,
+      "groupByFields" : null,
+      "filters" : [ ],
+      "relation" : {
+        "type" : "table",
+        "table" : "[Quota$]"
+      }
+    },
+    "ee41c22e-6b6a-4b70-8b00-668976a8a0d8" : {
+      "nodeType" : ".v1.LoadCsvInputUnion",
+      "name" : "orders (USCA)",
+      "id" : "ee41c22e-6b6a-4b70-8b00-668976a8a0d8",
+      "baseType" : "input",
+      "nextNodes" : [ {
+        "namespace" : "Default",
+        "nextNodeId" : "9b284447-a29c-4dde-899e-3521d9eca09b",
+        "nextNamespace" : "Default"
+      } ],
+      "serialize" : false,
+      "description" : null,
+      "connectionId" : "53643993-0e2c-4cea-b4ce-dff4959013dc",
+      "connectionAttributes" : { },
+      "fields" : [ {
+        "name" : "Row ID",
+        "type" : "integer",
+        "collation" : null,
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Order ID",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Order Date",
+        "type" : "date",
+        "collation" : null,
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Dispatch Date",
+        "type" : "date",
+        "collation" : null,
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Delivery Mode",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Customer ID",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Customer Name",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Segment",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Country/Region",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "City",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "State/Province",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Sales Region",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Product ID",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Category",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Sub-Category",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Product Name",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Sales",
+        "type" : "real",
+        "collation" : null,
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Quantity",
+        "type" : "integer",
+        "collation" : null,
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Discount",
+        "type" : "real",
+        "collation" : null,
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Profit",
+        "type" : "real",
+        "collation" : null,
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "File Paths",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      } ],
+      "actions" : [ ],
+      "debugModeRowLimit" : null,
+      "originalDataTypes" : { },
+      "randomSampling" : null,
+      "updateTimestamp" : null,
+      "restrictedFields" : { },
+      "userRenamedFields" : { },
+      "selectedFields" : null,
+      "samplingType" : null,
+      "groupByFields" : null,
+      "filters" : [ ],
+      "generatedInputs" : [ {
+        "inputUnionInputType" : ".FileInputUnionInput",
+        "inputNode" : {
+          "nodeType" : ".v2022_4_1.LoadCsv",
+          "name" : "orders (USCA)",
+          "id" : "da759c8b-407a-4f61-9675-de42f7b7c264",
+          "baseType" : "input",
+          "nextNodes" : [ ],
+          "serialize" : false,
+          "description" : null,
+          "connectionId" : "317f4d64-d0c3-48e7-96da-ea318d609394",
+          "connectionAttributes" : {
+            "filename" : "ORDERS_USCA_2015.csv",
+            "row-locator" : "",
+            "class" : "textscan"
+          },
+          "fields" : [ {
+            "name" : "Row ID",
+            "type" : "integer",
+            "collation" : null,
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Order ID",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Order Date",
+            "type" : "date",
+            "collation" : null,
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Dispatch Date",
+            "type" : "date",
+            "collation" : null,
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Delivery Mode",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Customer ID",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Customer Name",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Segment",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Country/Region",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "City",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "State/Province",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Sales Region",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Product ID",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Category",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Sub-Category",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Product Name",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Sales",
+            "type" : "real",
+            "collation" : null,
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Quantity",
+            "type" : "integer",
+            "collation" : null,
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Discount",
+            "type" : "real",
+            "collation" : null,
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Profit",
+            "type" : "real",
+            "collation" : null,
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          } ],
+          "actions" : [ ],
+          "debugModeRowLimit" : null,
+          "originalDataTypes" : { },
+          "randomSampling" : null,
+          "updateTimestamp" : null,
+          "restrictedFields" : null,
+          "userRenamedFields" : { },
+          "selectedFields" : null,
+          "samplingType" : null,
+          "groupByFields" : null,
+          "filters" : null,
+          "separator" : "A",
+          "locale" : "en_US",
+          "charSet" : "UTF-8",
+          "containsHeaders" : true,
+          "textQualifier" : "A"
+        },
+        "filePath" : "ORDERS_USCA_2015.csv"
+      }, {
+        "inputUnionInputType" : ".FileInputUnionInput",
+        "inputNode" : {
+          "nodeType" : ".v2022_4_1.LoadCsv",
+          "name" : "orders (USCA)",
+          "id" : "1d914ba9-a6e5-4c9a-bedd-875bcbfc9f75",
+          "baseType" : "input",
+          "nextNodes" : [ ],
+          "serialize" : false,
+          "description" : null,
+          "connectionId" : "317f4d64-d0c3-48e7-96da-ea318d609394",
+          "connectionAttributes" : {
+            "filename" : "ORDERS_USCA_2016.csv",
+            "row-locator" : "",
+            "class" : "textscan"
+          },
+          "fields" : [ {
+            "name" : "Row ID",
+            "type" : "integer",
+            "collation" : null,
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Order ID",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Order Date",
+            "type" : "date",
+            "collation" : null,
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Dispatch Date",
+            "type" : "date",
+            "collation" : null,
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Delivery Mode",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Customer ID",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Customer Name",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Segment",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Country/Region",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "City",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "State/Province",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Sales Region",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Product ID",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Category",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Sub-Category",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Product Name",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Sales",
+            "type" : "real",
+            "collation" : null,
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Quantity",
+            "type" : "integer",
+            "collation" : null,
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Discount",
+            "type" : "real",
+            "collation" : null,
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Profit",
+            "type" : "real",
+            "collation" : null,
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          } ],
+          "actions" : [ ],
+          "debugModeRowLimit" : null,
+          "originalDataTypes" : { },
+          "randomSampling" : null,
+          "updateTimestamp" : null,
+          "restrictedFields" : null,
+          "userRenamedFields" : { },
+          "selectedFields" : null,
+          "samplingType" : null,
+          "groupByFields" : null,
+          "filters" : null,
+          "separator" : "A",
+          "locale" : "en_US",
+          "charSet" : "UTF-8",
+          "containsHeaders" : true,
+          "textQualifier" : "A"
+        },
+        "filePath" : "ORDERS_USCA_2016.csv"
+      }, {
+        "inputUnionInputType" : ".FileInputUnionInput",
+        "inputNode" : {
+          "nodeType" : ".v2022_4_1.LoadCsv",
+          "name" : "orders (USCA)",
+          "id" : "f5d74e5f-e8e1-4f46-86e2-bf0b940b8f41",
+          "baseType" : "input",
+          "nextNodes" : [ ],
+          "serialize" : false,
+          "description" : null,
+          "connectionId" : "317f4d64-d0c3-48e7-96da-ea318d609394",
+          "connectionAttributes" : {
+            "filename" : "ORDERS_USCA_2017.csv",
+            "row-locator" : "",
+            "class" : "textscan"
+          },
+          "fields" : [ {
+            "name" : "Row ID",
+            "type" : "integer",
+            "collation" : null,
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Order ID",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Order Date",
+            "type" : "date",
+            "collation" : null,
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Dispatch Date",
+            "type" : "date",
+            "collation" : null,
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Delivery Mode",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Customer ID",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Customer Name",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Segment",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Country/Region",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "City",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "State/Province",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Sales Region",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Product ID",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Category",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Sub-Category",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Product Name",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Sales",
+            "type" : "real",
+            "collation" : null,
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Quantity",
+            "type" : "integer",
+            "collation" : null,
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Discount",
+            "type" : "real",
+            "collation" : null,
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Profit",
+            "type" : "real",
+            "collation" : null,
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          } ],
+          "actions" : [ ],
+          "debugModeRowLimit" : null,
+          "originalDataTypes" : { },
+          "randomSampling" : null,
+          "updateTimestamp" : null,
+          "restrictedFields" : null,
+          "userRenamedFields" : { },
+          "selectedFields" : null,
+          "samplingType" : null,
+          "groupByFields" : null,
+          "filters" : null,
+          "separator" : "A",
+          "locale" : "en_US",
+          "charSet" : "UTF-8",
+          "containsHeaders" : true,
+          "textQualifier" : "A"
+        },
+        "filePath" : "ORDERS_USCA_2017.csv"
+      }, {
+        "inputUnionInputType" : ".FileInputUnionInput",
+        "inputNode" : {
+          "nodeType" : ".v2022_4_1.LoadCsv",
+          "name" : "orders (USCA)",
+          "id" : "a7c2ec66-cd15-42f9-8816-9dfa19213838",
+          "baseType" : "input",
+          "nextNodes" : [ ],
+          "serialize" : false,
+          "description" : null,
+          "connectionId" : "317f4d64-d0c3-48e7-96da-ea318d609394",
+          "connectionAttributes" : {
+            "filename" : "ORDERS_USCA_2018.csv",
+            "row-locator" : "",
+            "class" : "textscan"
+          },
+          "fields" : [ {
+            "name" : "Row ID",
+            "type" : "integer",
+            "collation" : null,
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Order ID",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Order Date",
+            "type" : "date",
+            "collation" : null,
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Dispatch Date",
+            "type" : "date",
+            "collation" : null,
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Delivery Mode",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Customer ID",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Customer Name",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Segment",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Country/Region",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "City",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "State/Province",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Sales Region",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Product ID",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Category",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Sub-Category",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Product Name",
+            "type" : "string",
+            "collation" : "LEN_RUS",
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Sales",
+            "type" : "real",
+            "collation" : null,
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Quantity",
+            "type" : "integer",
+            "collation" : null,
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Discount",
+            "type" : "real",
+            "collation" : null,
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          }, {
+            "name" : "Profit",
+            "type" : "real",
+            "collation" : null,
+            "caption" : null,
+            "ordinal" : null,
+            "isGenerated" : false
+          } ],
+          "actions" : [ ],
+          "debugModeRowLimit" : null,
+          "originalDataTypes" : { },
+          "randomSampling" : null,
+          "updateTimestamp" : null,
+          "restrictedFields" : null,
+          "userRenamedFields" : { },
+          "selectedFields" : null,
+          "samplingType" : null,
+          "groupByFields" : null,
+          "filters" : null,
+          "separator" : "A",
+          "locale" : "en_US",
+          "charSet" : "UTF-8",
+          "containsHeaders" : true,
+          "textQualifier" : "A"
+        },
+        "filePath" : "ORDERS_USCA_2018.csv"
+      } ],
+      "filePattern" : "",
+      "inclusiveFilePattern" : true,
+      "includeSubDirectory" : false,
+      "containsHeaders" : true,
+      "pathNameField" : "File Paths",
+      "errorOnLoadFiles" : { },
+      "excludedFiles" : null,
+      "matchedFiles" : [ "ORDERS_USCA_2015.csv", "ORDERS_USCA_2016.csv", "ORDERS_USCA_2017.csv", "ORDERS_USCA_2018.csv" ],
+      "separator" : "A",
+      "locale" : "en_US",
+      "charSet" : "UTF-8",
+      "textQualifier" : "A"
+    },
+    "c7775b9f-adb4-47d6-b61d-772c7b83af4e" : {
+      "nodeType" : ".v1.WriteToHyper",
+      "name" : "Create 'Superstore Sales.hyper'",
+      "id" : "c7775b9f-adb4-47d6-b61d-772c7b83af4e",
+      "baseType" : "output",
+      "nextNodes" : [ ],
+      "serialize" : false,
+      "description" : "",
+      "hyperOutputFile" : "~/My Tableau Prep Repository/Datasources/Superstore Sales.hyper",
+      "tdsOutput" : "~/My Tableau Prep Repository/Datasources/Superstore Sales.tds"
+    },
+    "a7dc0ccb-af31-4553-88f6-f06250409892" : {
+      "nodeType" : ".v1.Container",
+      "name" : "Clean 2",
+      "id" : "a7dc0ccb-af31-4553-88f6-f06250409892",
+      "baseType" : "container",
+      "nextNodes" : [ {
+        "namespace" : "Default",
+        "nextNodeId" : "5c17dbf7-5427-44da-a541-a75446cc62de",
+        "nextNamespace" : "Default"
+      }, {
+        "namespace" : "Default",
+        "nextNodeId" : "c7775b9f-adb4-47d6-b61d-772c7b83af4e",
+        "nextNamespace" : "Default"
+      } ],
+      "serialize" : false,
+      "description" : null,
+      "loomContainer" : {
+        "parameters" : {
+          "parameters" : { }
+        },
+        "initialNodes" : [ "39c56197-906d-45d4-8c0d-bd2abfeceb32" ],
+        "nodes" : {
+          "eaa6f3f8-3091-4e3e-9f65-0b9155eec278" : {
+            "nodeType" : ".v1.RemoveColumns",
+            "name" : "Remove Product ID 1",
+            "id" : "eaa6f3f8-3091-4e3e-9f65-0b9155eec278",
+            "baseType" : "transform",
+            "nextNodes" : [ {
+              "namespace" : "Default",
+              "nextNodeId" : "d966e7ca-e1a5-4ad7-9164-09530f1bb411",
+              "nextNamespace" : "Default"
+            } ],
+            "serialize" : false,
+            "description" : null,
+            "columnNames" : [ "Product ID" ]
+          },
+          "39c56197-906d-45d4-8c0d-bd2abfeceb32" : {
+            "nodeType" : ".v1.RemoveColumns",
+            "name" : "Remove Order ID-1 1",
+            "id" : "39c56197-906d-45d4-8c0d-bd2abfeceb32",
+            "baseType" : "transform",
+            "nextNodes" : [ {
+              "namespace" : "Default",
+              "nextNodeId" : "eaa6f3f8-3091-4e3e-9f65-0b9155eec278",
+              "nextNamespace" : "Default"
+            } ],
+            "serialize" : false,
+            "description" : null,
+            "columnNames" : [ "Order ID-1" ]
+          },
+          "d966e7ca-e1a5-4ad7-9164-09530f1bb411" : {
+            "nodeType" : ".v1.RenameColumn",
+            "columnName" : "Product ID-1",
+            "rename" : "Product ID",
+            "name" : "Renamed Product ID-1 to Product ID 1",
+            "id" : "d966e7ca-e1a5-4ad7-9164-09530f1bb411",
+            "baseType" : "transform",
+            "nextNodes" : [ ],
+            "serialize" : false,
+            "description" : null
+          }
+        },
+        "connections" : { },
+        "dataConnections" : { },
+        "connectionIds" : [ ],
+        "dataConnectionIds" : [ ],
+        "nodeProperties" : { },
+        "extensibility" : null
+      },
+      "namespacesToInput" : {
+        "Default" : {
+          "nodeId" : "39c56197-906d-45d4-8c0d-bd2abfeceb32",
+          "namespace" : "Default"
+        }
+      },
+      "namespacesToOutput" : {
+        "Default" : {
+          "nodeId" : "d966e7ca-e1a5-4ad7-9164-09530f1bb411",
+          "namespace" : "Default"
+        }
+      },
+      "providedParameters" : null
+    },
+    "376bea4d-147f-4823-931e-ead0446ab3b2" : {
+      "nodeType" : ".v1.LoadCsv",
+      "name" : "Orders (LATAM)",
+      "id" : "376bea4d-147f-4823-931e-ead0446ab3b2",
+      "baseType" : "input",
+      "nextNodes" : [ {
+        "namespace" : "Default",
+        "nextNodeId" : "dbe494af-f83f-40f4-9d90-0bcb3f934652",
+        "nextNamespace" : "Default"
+      } ],
+      "serialize" : false,
+      "description" : null,
+      "connectionId" : "8abda59a-7bae-47e7-b7e3-4de5ec6dc745",
+      "connectionAttributes" : { },
+      "fields" : [ {
+        "name" : "Row ID",
+        "type" : "integer",
+        "collation" : null,
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Order ID",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Order Year",
+        "type" : "integer",
+        "collation" : null,
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Order Month",
+        "type" : "integer",
+        "collation" : null,
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Order Day",
+        "type" : "integer",
+        "collation" : null,
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Dispatch Year",
+        "type" : "integer",
+        "collation" : null,
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Dispatch Month",
+        "type" : "integer",
+        "collation" : null,
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Dispatch Day",
+        "type" : "integer",
+        "collation" : null,
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Delivery Mode",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Customer ID",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Customer Name",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Segment",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "City",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "State/Province",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Country\\Region",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Sales Region",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Product ID",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Category",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Sub-Category",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Discount",
+        "type" : "real",
+        "collation" : null,
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Product",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Sales",
+        "type" : "real",
+        "collation" : null,
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Quantity",
+        "type" : "integer",
+        "collation" : null,
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Profit",
+        "type" : "real",
+        "collation" : null,
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      } ],
+      "actions" : [ ],
+      "debugModeRowLimit" : null,
+      "originalDataTypes" : { },
+      "randomSampling" : null,
+      "updateTimestamp" : 1773998528979,
+      "restrictedFields" : { },
+      "userRenamedFields" : { },
+      "selectedFields" : null,
+      "samplingType" : null,
+      "groupByFields" : null,
+      "filters" : [ ],
+      "separator" : ",",
+      "locale" : "en_US",
+      "charSet" : "UTF-8",
+      "containsHeaders" : true,
+      "textQualifier" : "A"
+    },
+    "b20a8d14-5b75-414b-8f54-5dd64f562e83" : {
+      "nodeType" : ".v1.LoadCsv",
+      "name" : "Orders (EMEA)",
+      "id" : "b20a8d14-5b75-414b-8f54-5dd64f562e83",
+      "baseType" : "input",
+      "nextNodes" : [ {
+        "namespace" : "Default",
+        "nextNodeId" : "3b6005ae-2dee-4928-87d3-0993b448bd2e",
+        "nextNamespace" : "Default"
+      } ],
+      "serialize" : false,
+      "description" : null,
+      "connectionId" : "eb039e32-660e-45e0-b672-08a4e1c15d97",
+      "connectionAttributes" : { },
+      "fields" : [ {
+        "name" : "Row ID",
+        "type" : "integer",
+        "collation" : null,
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Order ID",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Order Date",
+        "type" : "date",
+        "collation" : null,
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Dispatch Date",
+        "type" : "date",
+        "collation" : null,
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Delivery Mode",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Customer ID",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Customer Name",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Segment",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "City",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "State/Province",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Country/Region",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Sales Region",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Product ID",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Category",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Sub-Category",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Product Name",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Sales",
+        "type" : "real",
+        "collation" : null,
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Quantity",
+        "type" : "integer",
+        "collation" : null,
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Discount",
+        "type" : "real",
+        "collation" : null,
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Profit",
+        "type" : "real",
+        "collation" : null,
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Right_Row ID",
+        "type" : "integer",
+        "collation" : null,
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Right_Order ID",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Right_Order Date",
+        "type" : "date",
+        "collation" : null,
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Right_Dispatch Date",
+        "type" : "date",
+        "collation" : null,
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Right_Delivery Mode",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Right_Customer ID",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Right_Customer Name",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Right_Segment",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Right_City",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Right_State/Province",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Right_Country/Region",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Right_Sales Region",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Right_Product ID",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Right_Category",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Right_Sub-Category",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Right_Product Name",
+        "type" : "string",
+        "collation" : "LEN_RUS",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Right_Sales",
+        "type" : "real",
+        "collation" : null,
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Right_Quantity",
+        "type" : "integer",
+        "collation" : null,
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Right_Discount",
+        "type" : "real",
+        "collation" : null,
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Right_Profit",
+        "type" : "real",
+        "collation" : null,
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      } ],
+      "actions" : [ {
+        "nodeType" : ".v1.RemoveColumns",
+        "name" : "Remove Right_Row ID + 0 More 1",
+        "id" : "4616f943-817a-459a-be12-629b2ce12d37",
+        "baseType" : "transform",
+        "nextNodes" : [ ],
+        "serialize" : false,
+        "description" : null,
+        "columnNames" : [ "Right_Row ID" ]
+      }, {
+        "nodeType" : ".v1.RemoveColumns",
+        "name" : "Remove Right_Order ID + 0 More 1",
+        "id" : "1c769173-b2df-493b-a25f-0b03a2f9ec01",
+        "baseType" : "transform",
+        "nextNodes" : [ ],
+        "serialize" : false,
+        "description" : null,
+        "columnNames" : [ "Right_Order ID" ]
+      }, {
+        "nodeType" : ".v1.RemoveColumns",
+        "name" : "Remove Right_Order Date + 0 More 1",
+        "id" : "6d3ee096-ec95-4b88-85ff-289931f8c6f1",
+        "baseType" : "transform",
+        "nextNodes" : [ ],
+        "serialize" : false,
+        "description" : null,
+        "columnNames" : [ "Right_Order Date" ]
+      }, {
+        "nodeType" : ".v1.RemoveColumns",
+        "name" : "Remove Right_Dispatch Date + 0 More 1",
+        "id" : "6093f5bd-4ce9-4a84-8a5d-d09c763eb24d",
+        "baseType" : "transform",
+        "nextNodes" : [ ],
+        "serialize" : false,
+        "description" : null,
+        "columnNames" : [ "Right_Dispatch Date" ]
+      }, {
+        "nodeType" : ".v1.RemoveColumns",
+        "name" : "Remove Right_Delivery Mode + 0 More 1",
+        "id" : "5c7f6c40-1758-4e6c-8bc1-0e7ac4580cf4",
+        "baseType" : "transform",
+        "nextNodes" : [ ],
+        "serialize" : false,
+        "description" : null,
+        "columnNames" : [ "Right_Delivery Mode" ]
+      }, {
+        "nodeType" : ".v1.RemoveColumns",
+        "name" : "Remove Right_Customer ID + 0 More 1",
+        "id" : "d9c5aecb-dd5c-4555-9f7c-ddf9845c044e",
+        "baseType" : "transform",
+        "nextNodes" : [ ],
+        "serialize" : false,
+        "description" : null,
+        "columnNames" : [ "Right_Customer ID" ]
+      }, {
+        "nodeType" : ".v1.RemoveColumns",
+        "name" : "Remove Right_CustomerName + 0 More 1",
+        "id" : "a2c510bb-daf1-487b-b83c-3ec182bec642",
+        "baseType" : "transform",
+        "nextNodes" : [ ],
+        "serialize" : false,
+        "description" : null,
+        "columnNames" : [ "Right_Customer Name" ]
+      }, {
+        "nodeType" : ".v1.RemoveColumns",
+        "name" : "Remove Right_Segment + 0 More 1",
+        "id" : "720aeb7c-e5af-496e-9226-352d5bae1a5a",
+        "baseType" : "transform",
+        "nextNodes" : [ ],
+        "serialize" : false,
+        "description" : null,
+        "columnNames" : [ "Right_Segment" ]
+      }, {
+        "nodeType" : ".v1.RemoveColumns",
+        "name" : "Remove Right_City + 0 More 1",
+        "id" : "b3d71ca9-31b6-496f-b762-9f252379ba52",
+        "baseType" : "transform",
+        "nextNodes" : [ ],
+        "serialize" : false,
+        "description" : null,
+        "columnNames" : [ "Right_City" ]
+      }, {
+        "nodeType" : ".v1.RemoveColumns",
+        "name" : "Remove Right_State/Province + 0 More 1",
+        "id" : "e684fe77-a7a9-4209-bd1b-a35eaaabcf94",
+        "baseType" : "transform",
+        "nextNodes" : [ ],
+        "serialize" : false,
+        "description" : null,
+        "columnNames" : [ "Right_State/Province" ]
+      }, {
+        "nodeType" : ".v1.RemoveColumns",
+        "name" : "Remove Right_Country/Region + 0 More 1",
+        "id" : "e2ff5a47-104a-48ed-a1df-5ac3877eb4be",
+        "baseType" : "transform",
+        "nextNodes" : [ ],
+        "serialize" : false,
+        "description" : null,
+        "columnNames" : [ "Right_Country/Region" ]
+      }, {
+        "nodeType" : ".v1.RemoveColumns",
+        "name" : "Remove Right_Sales Region + 0 More 1",
+        "id" : "8ab9f1e0-73a4-4e25-b5bd-c11ea4b360ae",
+        "baseType" : "transform",
+        "nextNodes" : [ ],
+        "serialize" : false,
+        "description" : null,
+        "columnNames" : [ "Right_Sales Region" ]
+      }, {
+        "nodeType" : ".v1.RemoveColumns",
+        "name" : "Remove Right_Product ID + 0 More 1",
+        "id" : "610083a4-ef71-4904-b1e8-ea9b4d1c2790",
+        "baseType" : "transform",
+        "nextNodes" : [ ],
+        "serialize" : false,
+        "description" : null,
+        "columnNames" : [ "Right_Product ID" ]
+      }, {
+        "nodeType" : ".v1.RemoveColumns",
+        "name" : "Remove Right_Category + 0 More 1",
+        "id" : "ad43b107-ee03-47c5-833c-f66463506c85",
+        "baseType" : "transform",
+        "nextNodes" : [ ],
+        "serialize" : false,
+        "description" : null,
+        "columnNames" : [ "Right_Category" ]
+      }, {
+        "nodeType" : ".v1.RemoveColumns",
+        "name" : "Remove Right_Sub-Category + 0 More 1",
+        "id" : "7708ab97-38be-4f21-9d86-d860c500e1a7",
+        "baseType" : "transform",
+        "nextNodes" : [ ],
+        "serialize" : false,
+        "description" : null,
+        "columnNames" : [ "Right_Sub-Category" ]
+      }, {
+        "nodeType" : ".v1.RemoveColumns",
+        "name" : "Remove Right_Product Name + 0 More 1",
+        "id" : "7116c4e3-cc42-4ab3-b6fb-ab4f2a4d4c4d",
+        "baseType" : "transform",
+        "nextNodes" : [ ],
+        "serialize" : false,
+        "description" : null,
+        "columnNames" : [ "Right_Product Name" ]
+      }, {
+        "nodeType" : ".v1.RemoveColumns",
+        "name" : "Remove Right_Sales + 0 More 1",
+        "id" : "4fc2bf2c-1561-47db-b257-319ff20555d3",
+        "baseType" : "transform",
+        "nextNodes" : [ ],
+        "serialize" : false,
+        "description" : null,
+        "columnNames" : [ "Right_Sales" ]
+      }, {
+        "nodeType" : ".v1.RemoveColumns",
+        "name" : "Remove Right_Quantity + 0 More 1",
+        "id" : "e5eaa3f6-13e1-46f7-8aa1-f013cb0106d2",
+        "baseType" : "transform",
+        "nextNodes" : [ ],
+        "serialize" : false,
+        "description" : null,
+        "columnNames" : [ "Right_Quantity" ]
+      }, {
+        "nodeType" : ".v1.RemoveColumns",
+        "name" : "Remove Right_Discount + 0 More 1",
+        "id" : "f5f135c8-4d5e-450e-a4a2-f7e559ddfb14",
+        "baseType" : "transform",
+        "nextNodes" : [ ],
+        "serialize" : false,
+        "description" : null,
+        "columnNames" : [ "Right_Discount" ]
+      }, {
+        "nodeType" : ".v1.RemoveColumns",
+        "name" : "Remove Right_Profit + 0 More 1",
+        "id" : "9422d4b4-e790-4b27-9b94-e9887bf6318d",
+        "baseType" : "transform",
+        "nextNodes" : [ ],
+        "serialize" : false,
+        "description" : null,
+        "columnNames" : [ "Right_Profit" ]
+      } ],
+      "debugModeRowLimit" : null,
+      "originalDataTypes" : { },
+      "randomSampling" : null,
+      "updateTimestamp" : null,
+      "restrictedFields" : { },
+      "userRenamedFields" : { },
+      "selectedFields" : null,
+      "samplingType" : null,
+      "groupByFields" : null,
+      "filters" : [ ],
+      "separator" : ",",
+      "locale" : "en_US",
+      "charSet" : "UTF-8",
+      "containsHeaders" : true,
+      "textQualifier" : "A"
+    },
+    "4679f8db-808e-44fa-bdaa-a70dadba183f" : {
+      "nodeType" : ".v1.LoadExcel",
+      "name" : "Orders (APAC)",
+      "id" : "4679f8db-808e-44fa-bdaa-a70dadba183f",
+      "baseType" : "input",
+      "nextNodes" : [ {
+        "namespace" : "Default",
+        "nextNodeId" : "b6893bb7-3b45-40e9-a6ff-c2a212f4b1e2",
+        "nextNamespace" : "Default"
+      } ],
+      "serialize" : false,
+      "description" : null,
+      "connectionId" : "09325ca8-3789-4659-b74c-6558d5e6985e",
+      "connectionAttributes" : { },
+      "fields" : [ {
+        "name" : "Row ID",
+        "type" : "integer",
+        "collation" : "LROOT",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Order ID",
+        "type" : "string",
+        "collation" : "LEN_RUS_S2",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Order Date",
+        "type" : "date",
+        "collation" : "LROOT",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Dispatch Date",
+        "type" : "date",
+        "collation" : "LROOT",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Delivery Mode",
+        "type" : "string",
+        "collation" : "LEN_RUS_S2",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Customer ID",
+        "type" : "string",
+        "collation" : "LEN_RUS_S2",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Customer Name",
+        "type" : "string",
+        "collation" : "LEN_RUS_S2",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Segment",
+        "type" : "string",
+        "collation" : "LEN_RUS_S2",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "City",
+        "type" : "string",
+        "collation" : "LEN_RUS_S2",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "State",
+        "type" : "string",
+        "collation" : "LEN_RUS_S2",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Country/Region",
+        "type" : "string",
+        "collation" : "LEN_RUS_S2",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Region",
+        "type" : "string",
+        "collation" : "LEN_RUS_S2",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Product ID",
+        "type" : "string",
+        "collation" : "LEN_RUS_S2",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Category",
+        "type" : "string",
+        "collation" : "LEN_RUS_S2",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Sub-Category",
+        "type" : "string",
+        "collation" : "LEN_RUS_S2",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Product Name",
+        "type" : "string",
+        "collation" : "LEN_RUS_S2",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Sales",
+        "type" : "string",
+        "collation" : "LEN_RUS_S2",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Quantity",
+        "type" : "integer",
+        "collation" : "LROOT",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Discounts",
+        "type" : "real",
+        "collation" : "LROOT",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      }, {
+        "name" : "Profit",
+        "type" : "real",
+        "collation" : "LROOT",
+        "caption" : null,
+        "ordinal" : null,
+        "isGenerated" : false
+      } ],
+      "actions" : [ ],
+      "debugModeRowLimit" : null,
+      "originalDataTypes" : { },
+      "randomSampling" : null,
+      "updateTimestamp" : 1542855811513,
+      "restrictedFields" : { },
+      "userRenamedFields" : { },
+      "selectedFields" : null,
+      "samplingType" : null,
+      "groupByFields" : null,
+      "filters" : [ ],
+      "relation" : {
+        "type" : "table",
+        "table" : "[Orders_APAC$]"
+      }
+    },
+    "b2c6e3f3-941c-4d48-a672-c7701233c433" : {
+      "nodeType" : ".v2018_2_3.SuperJoin",
+      "name" : "Orders + Returns",
+      "id" : "b2c6e3f3-941c-4d48-a672-c7701233c433",
+      "baseType" : "superNode",
+      "nextNodes" : [ {
+        "namespace" : "Default",
+        "nextNodeId" : "a7dc0ccb-af31-4553-88f6-f06250409892",
+        "nextNamespace" : "Default"
+      } ],
+      "serialize" : false,
+      "description" : null,
+      "beforeActionAnnotations" : [ {
+        "namespace" : "Right",
+        "annotationNode" : {
+          "nodeType" : ".v1.AddColumn",
+          "columnName" : "Days to Dispatch",
+          "expression" : "DATEDIFF('day',[Order Date],[Dispatch Date])",
+          "name" : "Add Days to Dispatch",
+          "id" : "7c3c6770-817f-4aac-9ef7-fcb90323ab4e",
+          "baseType" : "transform",
+          "nextNodes" : [ ],
+          "serialize" : false,
+          "description" : null
+        }
+      }, {
+        "namespace" : "Left",
+        "annotationNode" : {
+          "nodeType" : ".v1.AddColumn",
+          "columnName" : "Returned?",
+          "expression" : "IF ISNULL([Return reason]) = false  \nTHEN \"Yes\"\nELSE \"No\"\nEND",
+          "name" : "Add Returned?",
+          "id" : "7f492dd8-8c6a-497a-adbb-f16ae0f65579",
+          "baseType" : "transform",
+          "nextNodes" : [ ],
+          "serialize" : false,
+          "description" : null
+        }
+      }, {
+        "namespace" : "Right",
+        "annotationNode" : {
+          "nodeType" : ".v1.RemoveColumns",
+          "name" : "Remove Table Names 1",
+          "id" : "f16b5d0a-2a42-4af8-9805-05a80e1c5fcf",
+          "baseType" : "transform",
+          "nextNodes" : [ ],
+          "serialize" : false,
+          "description" : null,
+          "columnNames" : [ "Table Names" ]
+        }
+      }, {
+        "namespace" : "Right",
+        "annotationNode" : {
+          "nodeType" : ".v1.RemoveColumns",
+          "name" : "Remove File Paths 1",
+          "id" : "44be6077-a8da-4a66-9f85-20255dac5f85",
+          "baseType" : "transform",
+          "nextNodes" : [ ],
+          "serialize" : false,
+          "description" : null,
+          "columnNames" : [ "File Paths" ]
+        }
+      }, {
+        "namespace" : "Right",
+        "annotationNode" : {
+          "nodeType" : ".v1.AddColumn",
+          "columnName" : "Year of sale",
+          "expression" : "YEAR([Order Date])",
+          "name" : "Add Year of sale",
+          "id" : "f4d5332d-045c-451b-89e6-54a16311f1f8",
+          "baseType" : "transform",
+          "nextNodes" : [ ],
+          "serialize" : false,
+          "description" : null
+        }
+      }, {
+        "namespace" : "Right",
+        "annotationNode" : {
+          "nodeType" : ".v1.ChangeColumnType",
+          "fields" : {
+            "Discount" : {
+              "type" : "real",
+              "calc" : null
+            }
+          },
+          "name" : "Change Discount to Number (decimal) 1",
+          "id" : "d78f0467-0820-4d71-b472-b030738a3153",
+          "baseType" : "transform",
+          "nextNodes" : [ ],
+          "serialize" : false,
+          "description" : null
+        }
+      }, {
+        "namespace" : "Right",
+        "annotationNode" : {
+          "nodeType" : ".v1.RangeFilter",
+          "name" : "Exclude Discount:(17 - 18) 1",
+          "id" : "9031ec95-e7a9-4778-8b59-7fe03ebff342",
+          "baseType" : "transform",
+          "nextNodes" : [ ],
+          "serialize" : false,
+          "description" : null,
+          "ranges" : {
+            "Discount" : [ {
+              "startValue" : "17.0",
+              "includeStart" : true,
+              "endValue" : "18.0",
+              "includeEnd" : false
+            } ]
+          },
+          "exclude" : true
+        }
+      }, {
+        "namespace" : "Right",
+        "annotationNode" : {
+          "nodeType" : ".v1.AddColumn",
+          "columnName" : "Discount",
+          "expression" : "IFNULL([Discount],0)\n",
+          "name" : "Add Discount",
+          "id" : "917cdd44-b07e-48a5-8fff-ba8b8934b416",
+          "baseType" : "transform",
+          "nextNodes" : [ ],
+          "serialize" : false,
+          "description" : null
+        }
+      } ],
+      "afterActionAnnotations" : [ ],
+      "actionNode" : {
+        "nodeType" : ".v1.SimpleJoin",
+        "name" : "Join 1",
+        "id" : "887fe7b0-410b-4b40-9b91-285bf47b5f4c",
+        "baseType" : "transform",
+        "nextNodes" : [ ],
+        "serialize" : false,
+        "description" : null,
+        "conditions" : [ {
+          "leftExpression" : "[Product ID]",
+          "rightExpression" : "[Product ID]",
+          "comparator" : "=="
+        }, {
+          "leftExpression" : "[Order ID]",
+          "rightExpression" : "[Order ID]",
+          "comparator" : "=="
+        } ],
+        "joinType" : "right"
+      }
+    },
+    "5c17dbf7-5427-44da-a541-a75446cc62de" : {
+      "nodeType" : ".v2018_2_3.SuperAggregate",
+      "name" : "Roll up sales",
+      "id" : "5c17dbf7-5427-44da-a541-a75446cc62de",
+      "baseType" : "superNode",
+      "nextNodes" : [ {
+        "namespace" : "Default",
+        "nextNodeId" : "95ba757e-cc41-48c3-8727-6e40cb8047c9",
+        "nextNamespace" : "Right"
+      } ],
+      "serialize" : false,
+      "description" : null,
+      "beforeActionAnnotations" : [ ],
+      "afterActionAnnotations" : [ ],
+      "actionNode" : {
+        "nodeType" : ".v1.Aggregate",
+        "name" : "Aggregate 1",
+        "id" : "ae93caf9-70a7-4b31-ba81-69d04e15973d",
+        "baseType" : "transform",
+        "nextNodes" : [ ],
+        "serialize" : false,
+        "description" : null,
+        "groupByFields" : [ {
+          "columnName" : "Year of sale",
+          "function" : null,
+          "newColumnName" : null,
+          "specialFieldType" : null
+        }, {
+          "columnName" : "Sales Region",
+          "function" : null,
+          "newColumnName" : null,
+          "specialFieldType" : null
+        } ],
+        "aggregateFields" : [ {
+          "columnName" : "Discount",
+          "function" : "AVG",
+          "newColumnName" : null,
+          "specialFieldType" : null
+        }, {
+          "columnName" : "Profit",
+          "function" : "SUM",
+          "newColumnName" : null,
+          "specialFieldType" : null
+        }, {
+          "columnName" : "Quantity",
+          "function" : "SUM",
+          "newColumnName" : null,
+          "specialFieldType" : null
+        }, {
+          "columnName" : "Sales",
+          "function" : "SUM",
+          "newColumnName" : null,
+          "specialFieldType" : null
+        } ]
+      }
+    },
+    "98ded732-03af-4761-a4a6-856ce0c27ccb" : {
+      "nodeType" : ".v1.WriteToHyper",
+      "name" : "Create 'Annual Regional Performance.hyper'",
+      "id" : "98ded732-03af-4761-a4a6-856ce0c27ccb",
+      "baseType" : "output",
+      "nextNodes" : [ ],
+      "serialize" : false,
+      "description" : null,
+      "hyperOutputFile" : "~/My Tableau Prep Repository/Datasources/Annual regional performance.hyper",
+      "tdsOutput" : "~/My Tableau Prep Repository/Datasources/Annual regional performance.tds"
+    },
+    "95ba757e-cc41-48c3-8727-6e40cb8047c9" : {
+      "nodeType" : ".v2018_2_3.SuperJoin",
+      "name" : "Quota + Orders",
+      "id" : "95ba757e-cc41-48c3-8727-6e40cb8047c9",
+      "baseType" : "superNode",
+      "nextNodes" : [ {
+        "namespace" : "Default",
+        "nextNodeId" : "98ded732-03af-4761-a4a6-856ce0c27ccb",
+        "nextNamespace" : "Default"
+      } ],
+      "serialize" : false,
+      "description" : null,
+      "beforeActionAnnotations" : [ ],
+      "afterActionAnnotations" : [ ],
+      "actionNode" : {
+        "nodeType" : ".v1.SimpleJoin",
+        "name" : "Join 1",
+        "id" : "546d62f0-0bd2-457b-877c-ecfb48b5de04",
+        "baseType" : "transform",
+        "nextNodes" : [ ],
+        "serialize" : false,
+        "description" : null,
+        "conditions" : [ {
+          "leftExpression" : "[Sales Region]",
+          "rightExpression" : "[Sales Region]",
+          "comparator" : "=="
+        }, {
+          "leftExpression" : "[Year]",
+          "rightExpression" : "[Year of sale]",
+          "comparator" : "=="
+        } ],
+        "joinType" : "inner"
+      }
+    }
+  },
+  "connections" : {
+    "eb039e32-660e-45e0-b672-08a4e1c15d97" : {
+      "connectionType" : ".v1.SqlConnection",
+      "id" : "eb039e32-660e-45e0-b672-08a4e1c15d97",
+      "name" : "ORDERS_EMEA.csv",
+      "isPackaged" : true,
+      "connectionAttributes" : {
+        "filename" : "ORDERS_EMEA.csv",
+        "class" : "textscan"
+      }
+    },
+    "5432daa5-3268-4f95-8367-4a539e941ab0" : {
+      "connectionType" : ".v1.SqlConnection",
+      "id" : "5432daa5-3268-4f95-8367-4a539e941ab0",
+      "name" : "RETURNS.xlsx",
+      "isPackaged" : true,
+      "connectionAttributes" : {
+        "filename" : "RETURNS.xlsx",
+        "class" : "excel-direct"
+      }
+    },
+    "8abda59a-7bae-47e7-b7e3-4de5ec6dc745" : {
+      "connectionType" : ".v1.SqlConnection",
+      "id" : "8abda59a-7bae-47e7-b7e3-4de5ec6dc745",
+      "name" : "ORDERS_LATAM.csv",
+      "isPackaged" : true,
+      "connectionAttributes" : {
+        "filename" : "ORDERS_LATAM.csv",
+        "class" : "textscan"
+      }
+    },
+    "0cead8cf-68f1-42b7-8af7-3a3ed59b8aed" : {
+      "connectionType" : ".v1.SqlConnection",
+      "id" : "0cead8cf-68f1-42b7-8af7-3a3ed59b8aed",
+      "name" : "QUOTA.xlsx",
+      "isPackaged" : true,
+      "connectionAttributes" : {
+        "cleaning" : "yes",
+        "filename" : "QUOTA.xlsx",
+        "interpretationMode" : "1",
+        "class" : "excel-direct"
+      }
+    },
+    "09325ca8-3789-4659-b74c-6558d5e6985e" : {
+      "connectionType" : ".v1.SqlConnection",
+      "id" : "09325ca8-3789-4659-b74c-6558d5e6985e",
+      "name" : "ORDERS_APAC.xlsx",
+      "isPackaged" : true,
+      "connectionAttributes" : {
+        "filename" : "ORDERS_APAC.xlsx",
+        "class" : "excel-direct"
+      }
+    },
+    "53643993-0e2c-4cea-b4ce-dff4959013dc" : {
+      "connectionType" : ".v1.SqlConnection",
+      "id" : "53643993-0e2c-4cea-b4ce-dff4959013dc",
+      "name" : "ORDERS_USCA_2015.csv",
+      "isPackaged" : true,
+      "connectionAttributes" : {
+        "filename" : "ORDERS_USCA_2015.csv",
+        "class" : "textscan"
+      }
+    }
+  },
+  "dataConnections" : { },
+  "connectionIds" : [ "5432daa5-3268-4f95-8367-4a539e941ab0", "0cead8cf-68f1-42b7-8af7-3a3ed59b8aed", "09325ca8-3789-4659-b74c-6558d5e6985e", "eb039e32-660e-45e0-b672-08a4e1c15d97", "53643993-0e2c-4cea-b4ce-dff4959013dc", "8abda59a-7bae-47e7-b7e3-4de5ec6dc745" ],
+  "dataConnectionIds" : [ ],
+  "nodeProperties" : { },
+  "extensibility" : { },
+  "selection" : [ ],
+  "majorVersion" : 1,
+  "minorVersion" : 3,
+  "documentId" : "25cf7a03-a77c-46e3-b3c5-ebb052e8e6d9",
+  "obfuscatorId" : null
+}
